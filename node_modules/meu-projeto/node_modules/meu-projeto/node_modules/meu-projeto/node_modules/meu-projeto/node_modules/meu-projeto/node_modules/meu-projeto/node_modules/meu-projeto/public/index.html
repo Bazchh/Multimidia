@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Video Player</h1>
+
+        <div class="video-list">
+            <div class="video-item" onclick="loadVideo(0)">
+                <img src="https://via.placeholder.com/80x50" alt="Video Thumbnail 1">
+                <div class="video-details">
+                    <div class="video-title">Vídeo 1</div>
+                    <div class="video-description">Luffy em Batalha</div>
+                </div>
+            </div>
+            <div class="video-item" onclick="loadVideo(1)">
+                <img src="https://via.placeholder.com/80x50" alt="Video Thumbnail 2">
+                <div class="video-details">
+                    <div class="video-title">Vídeo 2</div>
+                    <div class="video-description">One Piece</div>
+                </div>
+            </div>
+            <div class="video-item" onclick="loadVideo(2)">
+                <img src="https://via.placeholder.com/80x50" alt="Video Thumbnail 3">
+                <div class="video-details">
+                    <div class="video-title">Vídeo 3</div>
+                    <div class="video-description">Dragon Ball</div>
+                </div>
+            </div>            
+        </div>
+
+        <div class="video-player">
+            <!-- Player de vídeo principal -->
+            <div id="videoPlayer" class="video-player-container"></div>
+            <div class="controls">
+                <button onclick="togglePlay()">Play/Pause</button>
+                <button onclick="muteVideo()">Mute</button>
+                <input type="range" id="timeSlider" class="time-slider" min="0" max="100" value="0" step="1" oninput="setTime()">
+                <input type="range" id="volumeSlider" class="volume" min="0" max="1" step="0.1" value="1" oninput="setVolume()">
+            </div>
+            <div id="videoDescription" class="video-description" style="margin-top: 10px;"></div> <!-- Descrição dos vídeos -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
